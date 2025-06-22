@@ -2,7 +2,7 @@ import { FaEnvelope, FaLinkedin, FaGithub } from 'react-icons/fa';
 
 export default function Contact() {
    return (
-    <div className="page">
+    <div className="page" data-aos="fade-up">
       <h1 className="section-title">Contact Me</h1>
       <p className="section-text">Feel free to reach out via any of the platforms below!</p>
       <div className="contact-icons">

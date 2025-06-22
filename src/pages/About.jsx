@@ -10,7 +10,7 @@ import { SiMongodb, SiTailwindcss } from "react-icons/si";
 import "../App.css";
 export default function About() {
   return (
-    <div className="page">
+    <div className="page" data-aos="fade-up">
       <h1 className="section-title">About Me</h1>
       <p className="section-text">
         I'm Alwaleed, a Software Engineering graduate from Philadelphia

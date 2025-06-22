@@ -2,7 +2,7 @@ import { projects } from '../Data/ProjectsData';
 
   export default function Projects() {
   return (
-    <div className="page">
+    <div className="page" data-aos="fade-up">
       <h1 className="section-title">Projects</h1>
       <div className="project-grid">
         {projects.map((proj, index) => (
