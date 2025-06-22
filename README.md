@@ -30,7 +30,7 @@ I'm a Software Engineering graduate with hands-on experience in modern web techn
 
 ## Projects
 
-🗂 View all projects on the live site → [Projects Section](https://waleed199c.github.io/portfolio/#/projects)
+View all projects on the live site → [Projects Section](https://waleed199c.github.io/portfolio/#/projects)
 
 ### ✅ [To-Do List App](https://github.com/waleed199c/todo-list-react)
 A responsive and clean task planner with local storage, theme toggle, and tag filtering.
@@ -40,7 +40,7 @@ Pulls data from NASA’s APOD API and displays image metadata by date. Uses Reac
 
 ---
 
-## 📄 Resume
+## Resume
 
 [View / Download Resume (PDF)](https://waleed199c.github.io/portfolio/Alwaleed-Khaled-Resume.pdf)
 
@@ -53,3 +53,26 @@ Clone the repo and run:
 ```bash
 npm install
 npm run dev
+```
+
+To build for production (used by GitHub Pages):
+
+```bash
+npm run build
+npm run deploy
+```
+
+---
+
+## Contact
+- Email: [alwaleedshg@gmail.com](mailto:alwaleedshg@gmail.com)
+
+- GitHub: [@waleed199c](https://github.com/waleed199c)
+
+- LinkedIn: [Alwaleed Alshaghnoubi](https://www.linkedin.com/in/alwaleed-alshaghnoubi/)
+
+---
+
+## License
+This project is under the MIT License.
+If this template helps you, feel free to fork or adapt it with credit.
