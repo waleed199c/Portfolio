@@ -1,21 +1,6 @@
-export default function Projects() {
-  const projects = [
-    {
-      title: "Portfolio Website",
-      description: "A responsive personal portfolio to showcase my skills, projects, and contact info.",
-      tech: ["React", "Tailwind", "Vite"],
-      github: "https://github.com/waleed199c",
-      demo: "#"
-    },
-    {
-      title: "To-Do Planner App",
-      description: "A modern task manager with tags, theme switching, and scheduling.",
-      tech: ["React", "CSS", "LocalStorage"],
-      github: "https://github.com/waleed199c",
-      demo: "#"
-    }
-  ];
+import { projects } from '../Data/ProjectsData';
 
+  export default function Projects() {
   return (
     <div className="page">
       <h1 className="section-title">Projects</h1>
