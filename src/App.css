@@ -115,3 +115,18 @@
 .resume-button:hover {
   background-color: #91caff;
 }
+
+.resume-nav-link {
+  color: #58a6ff;
+  text-decoration: none;
+  border: 1px solid #58a6ff;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.resume-nav-link:hover {
+  background-color: #58a6ff;
+  color: #0d1117;
+}

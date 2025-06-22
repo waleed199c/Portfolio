@@ -14,9 +14,18 @@ function Navbar() {
       zIndex: 10
     }}>
       <Link to="/" style={{ color: 'white', textDecoration: 'none' }}>Home</Link>
-      <Link to="/about" style={{ color: 'white', textDecoration: 'none' }}>About</Link>
-      <Link to="/projects" style={{ color: 'white', textDecoration: 'none' }}>Projects</Link>
-      <Link to="/contact" style={{ color: 'white', textDecoration: 'none' }}>Contact</Link>
+<Link to="/about" style={{ color: 'white', textDecoration: 'none' }}>About</Link>
+<Link to="/projects" style={{ color: 'white', textDecoration: 'none' }}>Projects</Link>
+<Link to="/contact" style={{ color: 'white', textDecoration: 'none' }}>Contact</Link>
+<a
+  href="/Alwaleed-Khaled-Resume.pdf"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="resume-nav-link"
+>
+  Resume
+</a>
+
     </nav>
   );
 }
