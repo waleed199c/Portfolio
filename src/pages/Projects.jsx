@@ -17,34 +17,17 @@ export default function Projects() {
   ];
 
   return (
-    <div style={{
-      paddingTop: '6rem',
-      background: '#0d1117',
-      color: 'white',
-      minHeight: '100vh',
-      textAlign: 'center'
-    }}>
-      <h1 style={{ fontSize: '2rem', marginBottom: '2rem' }}>Projects</h1>
-      <div style={{
-        display: 'flex',
-        flexWrap: 'wrap',
-        justifyContent: 'center',
-        gap: '2rem'
-      }}>
+    <div className="page">
+      <h1 className="section-title">Projects</h1>
+      <div className="project-grid">
         {projects.map((proj, index) => (
-          <div key={index} style={{
-            background: '#161b22',
-            padding: '1.5rem',
-            borderRadius: '0.5rem',
-            width: '300px',
-            boxShadow: '0 0 10px rgba(0,0,0,0.5)'
-          }}>
+          <div key={index} className="project-card">
             <h2>{proj.title}</h2>
             <p>{proj.description}</p>
             <p><strong>Tech:</strong> {proj.tech.join(', ')}</p>
-            <div style={{ marginTop: '1rem' }}>
-              <a href={proj.github} target="_blank" rel="noopener noreferrer" style={{ marginRight: '1rem', color: '#58a6ff' }}>GitHub</a>
-              <a href={proj.demo} target="_blank" rel="noopener noreferrer" style={{ color: '#58a6ff' }}>Demo</a>
+            <div className="project-links">
+              <a href={proj.github} target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a href={proj.demo} target="_blank" rel="noopener noreferrer">Demo</a>
             </div>
           </div>
         ))}

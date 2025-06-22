@@ -10,7 +10,7 @@ export default function About() {
         I enjoy building smooth user experiences, solving problems, and I’m always eager to learn something new.
       </p>
 
-      <h2 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>Tech Stack</h2>
+      <h2 className='section-subtitle'>Tech Stack</h2>
       <div style={{
         display: 'flex',
         gap: '2rem',

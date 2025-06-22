@@ -1,15 +1,7 @@
-body {
-    margin: 0;
-    display: flex;
-    place-items: center;
-    min-width: 100%;
-    min-height: 100vh;
-}
-
 .page {
   min-height: 100vh;
-  padding-top: 6rem;
   width: 100%;
+  padding-top: 6rem;
   background: #0d1117;
   color: white;
   display: flex;
@@ -20,10 +12,59 @@ body {
 .section-title {
   font-size: 2rem;
   margin-bottom: 1rem;
+  text-align: center;
+}
+
+.section-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
 }
 
 .section-text {
   max-width: 600px;
   text-align: center;
   margin-bottom: 2rem;
+}
+
+.project-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.project-card {
+  background: #161b22;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  width: 300px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  text-align: left;
+}
+
+.project-card h2 {
+  margin-bottom: 0.5rem;
+}
+
+.project-card p {
+  margin: 0.25rem 0;
+}
+
+.project-links {
+  margin-top: 1rem;
+}
+
+.project-links a {
+  color: #58a6ff;
+  margin-right: 1rem;
+  text-decoration: none;
+}
+
+.contact-icons {
+  font-size: 2rem;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
 }
