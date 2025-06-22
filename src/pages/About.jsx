@@ -1,19 +1,11 @@
 import { FaReact, FaNodeJs, FaJs, FaHtml5, FaCss3Alt, FaGithub } from 'react-icons/fa';
 import { SiMongodb, SiTailwindcss } from 'react-icons/si';
-
+import '../App.css';
 export default function About() {
   return (
-    <div style={{
-      paddingTop: '6rem',
-      color: 'white',
-      minHeight: '100vh',
-      background: '#0d1117',
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center'
-    }}>
-      <h1 style={{ fontSize: '2rem', marginBottom: '1rem' }}>About Me</h1>
-      <p style={{ maxWidth: '600px', textAlign: 'center', marginBottom: '2rem' }}>
+    <div className='page'>
+      <h1 className='section-title'>About Me</h1>
+      <p className='section-text'>
         I'm Alwaleed, a Software Engineering graduate from Philadelphia University with experience in full-stack web development using React, Node.js, and MongoDB.  
         I enjoy building smooth user experiences, solving problems, and I’m always eager to learn something new.
       </p>
