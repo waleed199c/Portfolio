@@ -99,3 +99,19 @@
 .contact-icons a:hover {
   transform: scale(1.2);
 }
+
+
+.resume-button {
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #58a6ff;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.resume-button:hover {
+  background-color: #91caff;
+}
