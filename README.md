@@ -1,12 +1,55 @@
-# React + Vite
+# 🌐 Alwaleed Khaled – Developer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to my personal developer portfolio!  
+This site showcases who I am, what I’ve built, and how to get in touch with me.
 
-Currently, two official plugins are available:
+🔗 Live Site → [https://waleed199c.github.io/portfolio](https://waleed199c.github.io/portfolio)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## About Me
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+I'm a Software Engineering graduate with hands-on experience in modern web technologies like React, Node.js, and MongoDB. I'm passionate about clean code, solving real problems, and learning fast — especially in environments that challenge me.
+
+-  Bilingual: Fluent in English & Arabic  
+-  Currently learning: Framer Motion & TypeScript  
+-  Available for: Remote internships, frontend roles, and junior dev opportunities
+
+---
+
+## Tech Stack
+
+- React, JavaScript, JSX  
+- HTML5, CSS3, Tailwind CSS  
+- Node.js, Express.js  
+- MongoDB, LocalStorage  
+- Git & GitHub  
+- AOS (Animate On Scroll), Vite
+
+---
+
+## Projects
+
+🗂 View all projects on the live site → [Projects Section](https://waleed199c.github.io/portfolio/#/projects)
+
+### ✅ [To-Do List App](https://github.com/waleed199c/todo-list-react)
+A responsive and clean task planner with local storage, theme toggle, and tag filtering.
+
+### 🚀 [NASA Picture of the Day](https://github.com/waleed199c/NASA-API-React)
+Pulls data from NASA’s APOD API and displays image metadata by date. Uses React, Axios, and modern hooks.
+
+---
+
+## 📄 Resume
+
+[View / Download Resume (PDF)](https://waleed199c.github.io/portfolio/Alwaleed-Khaled-Resume.pdf)
+
+---
+
+## How to Run Locally
+
+Clone the repo and run:
+
+```bash
+npm install
+npm run dev
