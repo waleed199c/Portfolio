@@ -1,5 +1,5 @@
 // src/components/Hero.jsx
-import { Typewriter } from 'react-simple-typewriter';
+import { Typewriter } from "react-simple-typewriter";
 import Particles from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 import { useCallback } from "react";
@@ -44,47 +44,58 @@ function Hero() {
     fullScreen: {
       enable: true,
       zIndex: -1,
-    }
+    },
   };
 
   return (
-  <>
-    <Particles init={particlesInit} options={particlesOptions} />
-    <div className="hero-container" style={{
-      height: '100vh',
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'center',
-      alignItems: 'center',
-      color: 'white',
-      textAlign: 'center',
-      position: 'relative',
-      zIndex: 1,
-      padding: '0 1rem',
-    }}>
-      <div style={{
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
-}}>
-        <h1 style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>
-    Hi, I'm <span style={{ color: '#58a6ff' }}>Alwaleed</span>
-  </h1>
-  <h2 style={{ fontSize: '1.5rem' }}>
-    <Typewriter
-      words={['Full Stack Developer', 'React Enthusiast', 'Open to Work!']}
-      loop={0}
-      cursor
-      cursorStyle='|'
-      typeSpeed={70}
-      deleteSpeed={50}
-      delaySpeed={1500}
-    />
-  </h2>
+    <>
+      <Particles init={particlesInit} options={particlesOptions} />
+      <div
+        className="hero-container"
+        style={{
+          height: "100vh",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          color: "white",
+          textAlign: "center",
+          position: "relative",
+          zIndex: 1,
+          padding: "0 1rem",
+          backdropFilter: "blur(4px)",
+          textShadow: "0 0 10px rgba(255,255,255,0.2)",
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
+          <h1 style={{ fontSize: "2.5rem", marginBottom: "1rem" }}>
+            Hi, I'm <span style={{ color: "#58a6ff" }}>Alwaleed</span>
+          </h1>
+          <h2 style={{ fontSize: "1.5rem" }}>
+            <Typewriter
+              words={[
+                "Full Stack Developer",
+                "React Enthusiast",
+                "Open to Work!",
+              ]}
+              loop={0}
+              cursor
+              cursorStyle="|"
+              typeSpeed={70}
+              deleteSpeed={50}
+              delaySpeed={1500}
+            />
+          </h2>
+        </div>
       </div>
-    </div>
-  </>
-);
+    </>
+  );
 }
 
 export default Hero;
