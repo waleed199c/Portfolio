@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
@@ -11,6 +11,25 @@ import "aos/dist/aos.css";
 import { useEffect } from "react";
 import ParticlesBackground from "./components/ParticlesBackground";
 
+// Move this into a wrapper inside the Router
+function AppContent() {
+  const location = useLocation();
+
+  return (
+    <>
+      <ParticlesBackground key={location.pathname} />
+      <ThemeToggle />
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/portfolio" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+    </>
+  );
+}
 
 function App() {
   useEffect(() => {
@@ -22,20 +41,9 @@ function App() {
   }, []);
 
   return (
-    <>
-      <ParticlesBackground />
-      <ThemeToggle />
-      <Router>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/portfolio" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-      </Router>
-    </>
+    <Router>
+      <AppContent />
+    </Router>
   );
 }
 
