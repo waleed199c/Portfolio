@@ -10,6 +10,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 
+
 function App() {
   useEffect(() => {
     AOS.init({
@@ -21,6 +22,9 @@ function App() {
 
   return (
     <>
+      <div className="twinkle-star twinkle1" />
+  <div className="twinkle-star twinkle2" />
+  <div className="twinkle-star twinkle3" />
       <ThemeToggle />
       <Router>
         <Navbar />

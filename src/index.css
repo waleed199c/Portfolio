@@ -7,11 +7,13 @@
 body, html {
   width: 100%;
   min-height: 100vh;
-  background-color: #0d1117;
   font-family: 'Segoe UI', sans-serif;
-  color: white;
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background 0.3s ease, color 0.3s ease;
+  position: relative;
+  z-index: 0;
 }
-
 #root {
   display: block;
   height: 100%;

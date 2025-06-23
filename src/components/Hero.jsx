@@ -51,21 +51,7 @@ function Hero() {
     <>
       <Particles init={particlesInit} options={particlesOptions} />
       <div
-        className="hero-container"
-        style={{
-          height: "100vh",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-          color: "white",
-          textAlign: "center",
-          position: "relative",
-          zIndex: 1,
-          padding: "0 1rem",
-          backdropFilter: "blur(4px)",
-          textShadow: "0 0 10px rgba(255,255,255,0.2)",
-        }}
+        className="hero-section"
       >
         <div
           style={{
