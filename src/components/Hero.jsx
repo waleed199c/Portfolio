@@ -1,7 +1,6 @@
-// src/components/Hero.jsx
 import { Typewriter } from "react-simple-typewriter";
-import Particles from "@tsparticles/react";
-import { loadSlim } from "@tsparticles/slim";
+import Particles from "react-tsparticles";
+import { loadSlim } from "tsparticles-slim";
 import { useCallback } from "react";
 
 function Hero() {
@@ -10,66 +9,55 @@ function Hero() {
   }, []);
 
   const particlesOptions = {
-    background: {
-      color: {
-        value: "#0d1117",
-      },
-    },
+    fullScreen: { enable: true, zIndex: -1 },
+    background: { color: { value: "#0d1117" } },
     fpsLimit: 60,
     particles: {
-      color: {
-        value: "#ffffff",
+      number: { value: 100, density: { enable: true, area: 800 } },
+      color: { value: "#ffffff" },
+      shape: {
+        type: "circle",
+        options: {
+          polygon: { sides: 5 }
+        }
+      },
+      opacity: {
+        value: 0.4,
+        random: true,
+        anim: { enable: true, speed: 1, opacity_min: 0.1, sync: false }
+      },
+      size: {
+        value: { min: 1, max: 3 },
+        random: true
       },
       links: {
         enable: true,
-        color: "#ffffff",
         distance: 150,
-        opacity: 0.5,
-        width: 1,
+        color: "#ffffff",
+        opacity: 0.2,
+        width: 1
       },
       move: {
         enable: true,
-        speed: 2,
-      },
-      number: {
-        value: 60,
-      },
-      opacity: {
-        value: 0.5,
-      },
-      size: {
-        value: 2,
-      },
+        speed: 0.6,
+        direction: "none",
+        outModes: { default: "bounce" }
+      }
     },
-    fullScreen: {
-      enable: true,
-      zIndex: -1,
-    },
+    detectRetina: true
   };
 
   return (
     <>
       <Particles init={particlesInit} options={particlesOptions} />
-      <div
-        className="hero-section"
-      >
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-          }}
-        >
-          <h1 style={{ fontSize: "2.5rem", marginBottom: "1rem" }}>
-            Hi, I'm <span style={{ color: "#58a6ff" }}>Alwaleed</span>
+      <section className="hero-section">
+        <div className="hero-content" data-aos="fade-up">
+          <h1 className="hero-title">
+            Hi, I'm <span className="highlight">Alwaleed</span> 👋
           </h1>
-          <h2 style={{ fontSize: "1.5rem" }}>
+          <h2 className="hero-subtitle">
             <Typewriter
-              words={[
-                "Full Stack Developer",
-                "React Enthusiast",
-                "Open to Work!",
-              ]}
+              words={["Full Stack Developer", "React Enthusiast", "Open to Work!"]}
               loop={0}
               cursor
               cursorStyle="|"
@@ -78,32 +66,15 @@ function Hero() {
               delaySpeed={1500}
             />
           </h2>
+          <p className="hero-desc">
+            Software engineering grad building modern web experiences. I love minimal UI,
+            clean code, and hacking projects just to see what’s possible.
+          </p>
+          <div className="hero-buttons">
+            <a href="/projects" className="resume-button">View Projects</a>
+          </div>
         </div>
-      </div>
-      <div
-        style={{
-          marginTop: "2rem",
-          padding: "0 1rem",
-          textAlign: "center",
-          maxWidth: "700px",
-        }}
-        data-aos="fade-up"
-      >
-        <h2 className="section-subtitle">A Bit About Me</h2>
-        <p className="section-text">
-          I'm a software engineering grad who loves building modern web
-          experiences. I'm passionate about clean code, minimal UI, and solving
-          interesting problems — whether that's a to-do app or hacking a game
-          with no mod support.
-        </p>
-        <a
-          href="#/about"
-          className="resume-button"
-          style={{ marginTop: "1rem", display: "inline-block" }}
-        >
-          Learn More
-        </a>
-      </div>
+      </section>
     </>
   );
 }

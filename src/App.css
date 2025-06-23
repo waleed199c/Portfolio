@@ -79,6 +79,49 @@
   z-index: 1;
 }
 
+.hero-content {
+  text-align: center;
+  max-width: 800px;
+  padding: 3rem 1rem;
+  margin: 0 auto;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.hero-title .highlight {
+  color: var(--accent);
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  color: var(--text);
+  opacity: 0.85;
+}
+
+.hero-desc {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-top: 1rem;
+  max-width: 600px;
+  opacity: 0.7;
+  margin-bottom: 2rem;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2.5rem;
+}
+
+
 .project-grid {
   display: flex;
   flex-wrap: wrap;
@@ -156,7 +199,7 @@
 .resume-button {
   margin-top: 1.5rem;
   padding: 0.75rem 1.5rem;
-  background-color: #58a6ff;
+  background-color: var(--accent);
   color: #fff;
   text-decoration: none;
   font-weight: 500;
@@ -169,18 +212,19 @@
 }
 
 .resume-nav-link {
+  padding: 0.75rem 1.5rem;
+  border: 2px solid var(--accent);
   color: var(--accent);
-  text-decoration: none;
-  border: 1px solid var(--accent);
-  padding: 0.4rem 0.8rem;
-  border-radius: 6px;
+  background: transparent;
+  border-radius: 8px;
   font-weight: 500;
+  font-size: 1rem;
   transition: all 0.3s ease;
 }
 
 .resume-nav-link:hover {
-  background-color: #58a6ff;
-  color: #0d1117;
+  background-color: var(--accent);
+  color: var(--bg);
 }
 
 .navbar {
@@ -419,4 +463,14 @@ body::before {
 @keyframes twinkle {
   0%, 100% { opacity: 0.1; transform: scale(1); }
   50% { opacity: 0.5; transform: scale(1.5); }
+}
+
+#tsparticles {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: -1 !important;
+  pointer-events: none;
 }

@@ -9,6 +9,7 @@ import "./App.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import ParticlesBackground from "./components/ParticlesBackground";
 
 
 function App() {
@@ -22,9 +23,7 @@ function App() {
 
   return (
     <>
-      <div className="twinkle-star twinkle1" />
-  <div className="twinkle-star twinkle2" />
-  <div className="twinkle-star twinkle3" />
+      <ParticlesBackground />
       <ThemeToggle />
       <Router>
         <Navbar />
