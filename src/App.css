@@ -69,13 +69,11 @@
   box-shadow: 0 0 20px rgba(88, 166, 255, 0.2);
 }
 
-
 .project-card h2 {
   margin-bottom: 0.5rem;
   font-size: 1.2rem;
   color: #58a6ff;
 }
-
 
 .project-card p {
   font-size: 0.9rem;
@@ -118,7 +116,6 @@
   transform: scale(1.2);
 }
 
-
 .resume-button {
   margin-top: 1.5rem;
   padding: 0.75rem 1.5rem;
@@ -150,35 +147,50 @@
 }
 
 .navbar {
-  display: flex;
-  justify-content: center;
-  padding: 1rem;
   position: fixed;
   top: 0;
   width: 100%;
-  background: #0d1117;
-  z-index: 10;
+  background: var(--nav-bg, #0d1117);
+  z-index: 100;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--text, white);
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: var(--text, white);
 }
 
 .nav-links {
   display: flex;
   gap: 2rem;
-  flex-wrap: wrap;
   align-items: center;
 }
 
-
 .nav-links a {
-  color: white;
+  color: var(--text, white);
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.3s;
 }
 
 .nav-links a:hover {
   color: #58a6ff;
 }
-
 
 .resume-nav-link {
   border: 1px solid #58a6ff;
@@ -186,6 +198,25 @@
   border-radius: 6px;
 }
 
+.theme-toggle {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  font-size: 1.2rem;
+  background-color: #161b22;
+  border: 2px solid #58a6ff;
+  color: #58a6ff;
+  padding: 0.6rem 0.75rem;
+  border-radius: 999px;
+  z-index: 999;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background-color: #58a6ff;
+  color: #0d1117;
+}
 
 @media screen and (max-width: 600px) {
   .nav-links {
@@ -197,6 +228,7 @@
 @media screen and (max-width: 768px) {
   .page {
     padding: 2rem 1rem;
+    padding-top: 5.5rem;
     align-items: stretch;
   }
 
@@ -233,5 +265,24 @@
   .contact-icons {
     flex-direction: column;
     gap: 1rem;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--nav-bg, #0d1117);
+    padding: 1rem 0;
+  }
+
+  .nav-links.show {
+    display: flex;
   }
 }

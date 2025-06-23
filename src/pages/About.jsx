@@ -45,21 +45,26 @@ export default function About() {
         <SiMongodb title="MongoDB" color="#4DB33D" />
         <FaGithub title="GitHub" color="#fff" />
       </div>
-      <div style={{ marginTop: '3rem', textAlign: 'center' }} data-aos="fade-up">
-  <h2 className="section-subtitle">Currently Learning</h2>
-  <ul style={{ listStyle: 'none', padding: 0, lineHeight: '1.8' }}>
-    <li>TypeScript & Strong Typing in React</li>
-    <li>Framer Motion for Animations</li>
-    <li>Building Fullstack Apps with Node.js + MongoDB</li>
-  </ul>
+      <div
+        style={{ marginTop: "3rem", textAlign: "center" }}
+        data-aos="fade-up"
+      >
+        <h2 className="section-subtitle">Currently Learning</h2>
+        <ul style={{ listStyle: "none", padding: 0, lineHeight: "1.8" }}>
+          <li>TypeScript & Strong Typing in React</li>
+          <li>Framer Motion for Animations</li>
+          <li>Building Fullstack Apps with Node.js + MongoDB</li>
+        </ul>
 
-  <h2 className="section-subtitle" style={{ marginTop: '2rem' }}>Goals</h2>
-  <ul style={{ listStyle: 'none', padding: 0, lineHeight: '1.8' }}>
-    <li>Land a frontend, backend, fullstack internship or junior role</li>
-    <li>Learn design systems and component libraries</li>
-    <li>Collaborate on real-world team projects</li>
-  </ul>
-</div>
+        <h2 className="section-subtitle" style={{ marginTop: "2rem" }}>
+          Goals
+        </h2>
+        <ul style={{ listStyle: "none", padding: 0, lineHeight: "1.8" }}>
+          <li>Land a frontend, backend, fullstack internship or junior role</li>
+          <li>Learn design systems and component libraries</li>
+          <li>Collaborate on real-world team projects</li>
+        </ul>
+      </div>
     </div>
   );
 }

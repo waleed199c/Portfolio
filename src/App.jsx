@@ -4,20 +4,24 @@ import About from "./pages/About";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
 import Navbar from "./components/Navbar";
+import ThemeToggle from "./components/ThemeToggle";
 import "./App.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+
 function App() {
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      easing: "ease-in-out",
+      once: true,
+    });
+  }, []);
+
   return (
-    useEffect(() => {
-      AOS.init({
-        duration: 800,
-        easing: "ease-in-out",
-        once: true,
-      });
-    }, []),
-    (
+    <>
+      <ThemeToggle />
       <Router>
         <Navbar />
         <Routes>
@@ -28,7 +32,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </Router>
-    )
+    </>
   );
 }
 
