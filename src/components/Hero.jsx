@@ -94,6 +94,30 @@ function Hero() {
           </h2>
         </div>
       </div>
+      <div
+        style={{
+          marginTop: "2rem",
+          padding: "0 1rem",
+          textAlign: "center",
+          maxWidth: "700px",
+        }}
+        data-aos="fade-up"
+      >
+        <h2 className="section-subtitle">A Bit About Me</h2>
+        <p className="section-text">
+          I'm a software engineering grad who loves building modern web
+          experiences. I'm passionate about clean code, minimal UI, and solving
+          interesting problems — whether that's a to-do app or hacking a game
+          with no mod support.
+        </p>
+        <a
+          href="#/about"
+          className="resume-button"
+          style={{ marginTop: "1rem", display: "inline-block" }}
+        >
+          Learn More
+        </a>
+      </div>
     </>
   );
 }

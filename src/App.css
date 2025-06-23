@@ -47,23 +47,41 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 2rem;
+  align-items: stretch;
 }
 
 .project-card {
   background: #161b22;
   padding: 1.5rem;
   border-radius: 0.5rem;
-  width: 300px;
+  width: 320px;
+  max-width: 100%;
+  height: 380px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(88, 166, 255, 0.2);
+}
+
 
 .project-card h2 {
   margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  color: #58a6ff;
 }
 
+
 .project-card p {
-  margin: 0.25rem 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #c9d1d9;
+  flex-grow: 1;
 }
 
 .project-links {
