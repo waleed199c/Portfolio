@@ -1,15 +1,18 @@
+/* -----------------------------
+   Global Theme Variables
+----------------------------- */
 :root {
   --bg: #0d1117;
   --text: #ffffff;
   --accent: #58a6ff;
-  --card-bg: rgba(13, 17, 23, 0.8); /* dark glassy bg */
+  --card-bg: rgba(13, 17, 23, 0.8);
 }
 
 [data-theme="light"] {
   --bg: #f0fef7;
   --text: #0d1117;
   --accent: #a5ff00;
-  --card-bg: rgba(255, 255, 255, 0.85); /* light glassy bg */
+  --card-bg: rgba(255, 255, 255, 0.85);
 }
 
 [data-theme="dark"] {
@@ -18,6 +21,9 @@
   --accent: #58a6ff;
 }
 
+/* -----------------------------
+   Layout & Page Structure
+----------------------------- */
 .page {
   min-height: 100vh;
   width: 100%;
@@ -27,8 +33,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: relative; 
-  z-index: 1;          /* ensure content is above particles */
+  position: relative;
+  z-index: 1;
 }
 
 .section-title {
@@ -384,88 +390,15 @@ body::before {
   left: 0;
   height: 100%;
   width: 100%;
-  z-index: -1;
+  z-index: -2;
   pointer-events: none;
   animation: starfield 40s linear infinite;
 }
 
-[data-theme="dark"] body::before {
-  background:
-    radial-gradient(circle at 10% 20%, #ffffff 1px, transparent 1px),
-    radial-gradient(circle at 25% 75%, #ffffff 2px, transparent 2px),
-    radial-gradient(circle at 60% 30%, #ffffff 1px, transparent 1px),
-    radial-gradient(circle at 80% 90%, #ffffff 2.5px, transparent 2.5px),
-    radial-gradient(circle at 50% 50%, #ffffff 3px, transparent 3px),
-    radial-gradient(circle at 70% 10%, #ffffff 1.5px, transparent 1.5px),
-    radial-gradient(circle at 90% 40%, #ffffff 1px, transparent 1px),
-    radial-gradient(circle at 15% 60%, #ffffff 1px, transparent 1px),
-    radial-gradient(circle at 35% 85%, #ffffff 1.5px, transparent 1.5px),
-    radial-gradient(circle at 45% 10%, #ffffff 2px, transparent 2px),
-    radial-gradient(circle at 5% 95%, #ffffff 1px, transparent 1px),
-    radial-gradient(circle at 85% 15%, #ffffff 2.5px, transparent 2.5px),
-    radial-gradient(circle at 65% 65%, #ffffff 3px, transparent 3px),
-    radial-gradient(circle at 78% 35%, #ffffff 1.5px, transparent 1.5px);
-  background-repeat: no-repeat;
-  background-size: cover;
-  opacity: 0.12;
-  animation: starfield 40s linear infinite;
-}
-
-[data-theme="light"] body::before {
-  background: linear-gradient(to bottom, #eaffd0, #f0fef7);
-  opacity: 0.4;
-  animation: none;
-}
-
-@keyframes starfield {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(20px);
-  }
-}
-
-[data-theme="dark"] .twinkle-star {
-  position: fixed;
-  border-radius: 50%;
-  background-color: #ffffff;
-  opacity: 0.15;
-  pointer-events: none;
-  z-index: -1;
-  animation: twinkle 3s ease-in-out infinite;
-}
-
-.twinkle1 {
-  top: 30%;
-  left: 20%;
-  width: 6px;
-  height: 6px;
-  animation-delay: 0s;
-}
-
-.twinkle2 {
-  top: 70%;
-  left: 65%;
-  width: 8px;
-  height: 8px;
-  animation-delay: 1.5s;
-}
-
-.twinkle3 {
-  top: 50%;
-  left: 85%;
-  width: 5px;
-  height: 5px;
-  animation-delay: 2.5s;
-}
-
-@keyframes twinkle {
-  0%, 100% { opacity: 0.1; transform: scale(1); }
-  50% { opacity: 0.5; transform: scale(1.5); }
-}
-
-#tsparticles {
+/* -----------------------------
+   Particles Layer Fix (Global)
+----------------------------- */
+#tsparticles canvas {
   position: fixed !important;
   top: 0;
   left: 0;
@@ -474,3 +407,6 @@ body::before {
   z-index: -1 !important;
   pointer-events: none;
 }
+
+/* -----------------------------
+----------------------------- */
