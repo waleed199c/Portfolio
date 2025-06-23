@@ -34,38 +34,89 @@ function ParticlesBackground() {
 }, []);
 
   if (!showParticles) return null;
-
+ 
   return (
     <Particles
       id="tsparticles"
       init={particlesInit}
-      options={{
-        fullScreen: { enable: true, zIndex: -1 },
-        background: { color: "#0d1117" },
-        fpsLimit: 60,
-        particles: {
-          number: { value: 100, density: { enable: true, area: 800 } },
-          color: { value: "#ffffff" },
-          shape: { type: "circle" },
-          opacity: {
-            value: 0.4,
-            random: true,
-            anim: { enable: true, speed: 1, opacity_min: 0.1, sync: false },
-          },
-          size: {
-            value: { min: 1, max: 3 },
-            random: true,
-          },
-          move: {
-            enable: true,
-            speed: 0.6,
-            direction: "none",
-            outModes: { default: "bounce" },
-          },
-          links: { enable: false }
+options={{
+  fullScreen: { enable: true, zIndex: -1 },
+  background: { color: "#0d1117" },
+  fpsLimit: 60,
+  detectRetina: true,
+
+  particles: {
+    number: {
+      value: 50,
+      density: { enable: true, area: 800 },
+    },
+    color: { value: ["#ffffff", "#afffff"] },
+    shape: { type: "circle" },
+    opacity: {
+      value: 0.4,
+      random: true,
+    },
+    size: {
+      value: { min: 1, max: 3 },
+    },
+    move: {
+      enable: true,
+      speed: 0.3,
+      direction: "none",
+      outModes: { default: "bounce" },
+    },
+    links: { enable: false },
+  },
+
+  emitters: [
+    {
+      // COMET
+      direction: "right",
+      position: { x: 0, y: 30 },
+      rate: { delay: 3, quantity: 1 },
+      particles: {
+        color: { value: "#ffffff" },
+        size: { value: 4 },
+        opacity: { value: 1 },
+        move: {
+          speed: 5,
+          straight: true,
+          direction: "right",
+          outModes: { default: "out" },
         },
-        detectRetina: true
-      }}
+        trail: {
+          enable: true,
+          length: 20,
+          fillColor: "#0d1117",
+        },
+      },
+    },
+    {
+      // TWINKLES
+      rate: { delay: 1.5, quantity: 2 },
+      size: { width: "100%", height: "100%" },
+      particles: {
+        size: { value: 5 },
+        color: { value: "#ffffff" },
+        opacity: {
+          value: 1,
+          animation: {
+            enable: true,
+            speed: 3,
+            minimumValue: 0,
+            sync: false,
+          },
+        },
+        move: {
+          enable: true,
+          speed: 0.1,
+        },
+      },
+    },
+  ],
+}}
+
+
     />
   );
 }
