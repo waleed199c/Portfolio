@@ -8,12 +8,12 @@ const currentPath = window.location.pathname;
 const basePath = currentPath.includes('/Portfolio/') ? '/Portfolio/' : '/';
 pdfjs.GlobalWorkerOptions.workerSrc =
   window.location.origin + basePath + "pdf.worker.min.mjs";
-  
+
 const Resume = () => {
   const [width, setWidth] = useState(window.innerWidth);
   const navigate = useNavigate();
 
-  const pdfFile = "/Alwaleed-Alshaghnoubi-Resume.pdf";
+  const pdfFile = "/Portfolio/Alwaleed-Alshaghnoubi-Resume.pdf";
 
   useEffect(() => {
     const handleResize = () => setWidth(window.innerWidth);
