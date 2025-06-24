@@ -31,7 +31,7 @@ const DriftingLeaves = () => {
       height: 32px;
       opacity: 0.7;
       pointer-events: none;
-      z-index: 1000;
+      z-index: 10;
       top: -100px;
       left: -100px;
     `;
@@ -151,7 +151,7 @@ const DriftingLeaves = () => {
       clearTimeout(initialTimeout);
       
       // Remove any existing leaves
-      const existingLeaves = document.querySelectorAll('[style*="pointer-events: none"][style*="z-index: 1000"]');
+      const existingLeaves = document.querySelectorAll('[style*="pointer-events: none"][style*="z-index: 10"]');
       existingLeaves.forEach(leaf => {
         if (leaf.parentNode) {
           leaf.parentNode.removeChild(leaf);

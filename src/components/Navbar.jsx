@@ -44,14 +44,13 @@ function Navbar() {
           >
             Contact
           </NavLink>
-          <a
-            href="/Alwaleed-Khaled-Resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="resume-nav-link"
+          <NavLink
+            to="/resume"
+            className={({ isActive }) => (isActive ? "active" : "")}
+            onClick={() => setMenuOpen(false)}
           >
             Resume
-          </a>
+          </NavLink>
         </div>
       </div>
     </nav>

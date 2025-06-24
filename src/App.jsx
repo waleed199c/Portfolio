@@ -10,6 +10,7 @@ import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
 import Navbar from "./components/Navbar";
 import ThemeToggle from "./components/ThemeToggle";
+import Resume from "./pages/Resume";
 import "./App.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -23,20 +24,22 @@ import DriftingLeaves from "./components/DriftingLeaves";
 function AppContent() {
   const location = useLocation();
   const isDark = useIsDarkMode();
+  const isResumePage = location.pathname === "/resume";
 
   return (
     <>
       <ParticlesBackground key={location.pathname} />
-      <CelestialBodies />
+      {!isResumePage && <CelestialBodies />}
       {!isDark && <DriftingLeaves />}
       <ThemeToggle />
-      <Navbar />
+       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/portfolio" element={<Home />} />
+        <Route path="/Portfolio" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/resume" element={<Resume />} />
       </Routes>
     </>
   );
