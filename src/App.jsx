@@ -17,6 +17,7 @@ import { useEffect } from "react";
 import ParticlesBackground from "./components/ParticlesBackground";
 import CelestialBodies from "./components/CelestialBodies";
 import { useIsDarkMode } from "./hooks/useIsDarkMode";
+import DriftingLeaves from "./components/DriftingLeaves";
 
 // Move this into a wrapper inside the Router
 function AppContent() {
@@ -27,6 +28,7 @@ function AppContent() {
     <>
       <ParticlesBackground key={location.pathname} />
       <CelestialBodies />
+      {!isDark && <DriftingLeaves />}
       <ThemeToggle />
       <Navbar />
       <Routes>
