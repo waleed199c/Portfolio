@@ -41,7 +41,7 @@ function ParticlesBackground() {
       init={particlesInit}
       options={{
         fullScreen: { enable: true, zIndex: -1 },
-        background: { color: "#0d1117" },
+        background: { color: "transparent" },
         fpsLimit: 60,
         detectRetina: true,
 

@@ -9,9 +9,9 @@ html {
   width: 100%;
   min-height: 100vh;
   font-family: "Segoe UI", sans-serif;
-  background-color: var(--bg);
   color: var(--text);
   position: relative;
+  background: var(--bg);
   z-index: 0;
 }
 #root {

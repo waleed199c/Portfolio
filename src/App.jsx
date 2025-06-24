@@ -30,7 +30,7 @@ function AppContent() {
     <>
       <ParticlesBackground key={location.pathname} />
       {!isResumePage && <CelestialBodies />}
-      {!isDark && <DriftingLeaves />}
+      {!isResumePage && !isDark && <DriftingLeaves />}
       <ThemeToggle />
        <Navbar />
       <Routes>
