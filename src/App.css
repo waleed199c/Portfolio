@@ -1,5 +1,5 @@
 /* -----------------------------
-   Global Theme Variables
+   Global Theme Variables - IMPROVED LIGHT MODE
 ----------------------------- */
 :root {
   --bg: #0d1117;
@@ -9,10 +9,13 @@
 }
 
 [data-theme="light"] {
-  --bg: #f0fef7;
-  --text: #0d1117;
-  --accent: #a5ff00;
-  --card-bg: rgba(255, 255, 255, 0.85);
+   --bg: linear-gradient(to bottom, #daf0ff, #fffbe6);
+  --text: #2c3e50;
+  --accent: #7dd800;
+  --navbar-bg: rgba(255, 255, 255, 0.6);
+  --card-bg: rgba(255, 255, 255, 0.7);
+  --navbar-text: #2a3441;
+  --section-subtitle: #4a5568;
 }
 
 [data-theme="dark"] {
@@ -50,7 +53,7 @@
   margin-bottom: 1rem;
   text-align: center;
   font-weight: 500;
-  color: #8b949e;
+  color: var(--section-subtitle, #8b949e);
 }
 
 .section-text {
@@ -68,6 +71,11 @@
   margin: 3rem auto;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
+}
+
+/* Light mode divider adjustment */
+[data-theme="light"] .section-divider {
+  background: rgba(125, 216, 0, 0.2);
 }
 
 .hero-section {
@@ -127,7 +135,6 @@
   margin-top: 2.5rem;
 }
 
-
 .project-grid {
   display: flex;
   flex-wrap: wrap;
@@ -153,6 +160,11 @@
 .project-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 0 20px rgba(88, 166, 255, 0.2);
+}
+
+/* Light mode project card hover */
+[data-theme="light"] .project-card:hover {
+  box-shadow: 0 0 20px rgba(125, 216, 0, 0.25);
 }
 
 .project-card h2 {
@@ -183,6 +195,14 @@
 
 .project-links a:hover {
   border-bottom: 2px solid var(--accent);
+}
+
+/* Light mode specific hover color */
+[data-theme="light"] .project-links a:hover {
+  color: #5cb800;
+}
+
+[data-theme="dark"] .project-links a:hover {
   color: #91caff;
 }
 
@@ -217,6 +237,16 @@
   background-color: #91caff;
 }
 
+/* Light mode resume button text color fix */
+[data-theme="light"] .resume-button {
+  color: #ffffff;
+}
+
+[data-theme="light"] .resume-button:hover {
+  background-color: #5cb800;
+  color: #ffffff;
+}
+
 .resume-nav-link {
   padding: 0.75rem 1.5rem;
   border: 2px solid var(--accent);
@@ -233,14 +263,29 @@
   color: var(--bg);
 }
 
+/* IMPROVED NAVBAR FOR LIGHT MODE */
 .navbar {
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 100;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background: rgba(13, 17, 23, 0.15);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border-bottom: 1px solid rgba(88, 166, 255, 0.15);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
 }
 
+[data-theme="light"] .navbar {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05); /* subtle line */
+  box-shadow: 0 4px 10px rgba(150, 200, 255, 0.12); /* soft sky blue glow */
+}
 .navbar-inner {
   display: flex;
   justify-content: space-between;
@@ -251,6 +296,23 @@
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
+  color: var(--text);
+  transition: all 0.3s ease;
+}
+
+.logo:hover {
+  color: var(--accent);
+  text-shadow: 0 0 10px rgba(88, 166, 255, 0.3);
+}
+
+/* Light mode logo hover */
+[data-theme="light"] .logo {
+  color: var(--navbar-text);
+}
+
+[data-theme="light"] .logo:hover {
+  color: var(--accent);
+  text-shadow: 0 0 10px rgba(125, 216, 0, 0.4);
 }
 
 .menu-toggle {
@@ -258,6 +320,25 @@
   font-size: 1.5rem;
   background: none;
   border: none;
+  color: var(--text);
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.menu-toggle:hover {
+  background: rgba(88, 166, 255, 0.1);
+  transform: scale(1.1);
+}
+
+/* Light mode menu toggle */
+[data-theme="light"] .menu-toggle {
+  color: var(--navbar-text);
+}
+
+[data-theme="light"] .menu-toggle:hover {
+  background: rgba(125, 216, 0, 0.1);
 }
 
 .nav-links {
@@ -267,31 +348,161 @@
 }
 
 .nav-links a {
-  color: var(--text, white);
+  color: var(--text);
   text-decoration: none;
   font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  text-shadow: 0 0 10px rgba(88, 166, 255, 0.1);
 }
 
 .nav-links a:hover {
-  color: #58a6ff;
+  color: var(--accent);
+  background: rgba(88, 166, 255, 0.1);
+  transform: translateY(-2px);
 }
 
-.logo,
-.menu-toggle,
-.nav-links a {
-  color: var(--text);
-  transition: color 0.3s ease;
+/* IMPROVED LIGHT MODE NAV LINKS */
+[data-theme="light"] .nav-links a {
+  color: #2e3a4e; /* deep blue-gray for contrast */
+  text-shadow: none;
 }
 
-.navbar {
-  background-color: var(--bg);
-  transition: background 0.3s ease;
+[data-theme="light"] .nav-links a:hover {
+  background: rgba(125, 216, 0, 0.1); /* minty hover */
+  color: #5cb800;
+  transform: translateY(-1px);
+}
+
+.nav-links a.active,
+.nav-links a.current {
+  color: var(--accent);
+  background: rgba(88, 166, 255, 0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 0 15px rgba(88, 166, 255, 0.2);
+}
+
+/* Light mode active links */
+[data-theme="light"] .nav-links a.active,
+[data-theme="light"] .nav-links a.current {
+  background: rgba(125, 216, 0, 0.15);
+  box-shadow: 0 0 15px rgba(125, 216, 0, 0.25);
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), #91caff);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+/* Light mode underline */
+[data-theme="light"] .nav-links a::after {
+  background: linear-gradient(90deg, var(--accent), #5cb800);
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after,
+.nav-links a.current::after {
+  width: 80%;
+}
+
+.nav-links a.active::after,
+.nav-links a.current::after {
+  width: 90%;
+  background: linear-gradient(90deg, var(--accent), var(--accent));
+  box-shadow: 0 0 8px rgba(88, 166, 255, 0.4);
+}
+
+/* Light mode active underline */
+[data-theme="light"] .nav-links a.active::after,
+[data-theme="light"] .nav-links a.current::after {
+  box-shadow: 0 0 8px rgba(125, 216, 0, 0.5);
+}
+
+.nav-links a:hover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(88, 166, 255, 0.1),
+    transparent
+  );
+  animation: shimmer 0.6s ease-out;
+  z-index: -1;
+}
+
+/* Light mode shimmer effect */
+[data-theme="light"] .nav-links a:hover::before {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(125, 216, 0, 0.15),
+    transparent
+  );
+}
+
+@keyframes shimmer {
+  to {
+    left: 100%;
+  }
 }
 
 .resume-nav-link {
-  border: 1px solid #58a6ff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 6px;
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  background: transparent;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.resume-nav-link:hover {
+  background-color: var(--accent);
+  color: var(--bg);
+  box-shadow: 0 0 20px rgba(88, 166, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Light mode resume nav link */
+[data-theme="light"] .resume-nav-link:hover {
+  box-shadow: 0 0 20px rgba(125, 216, 0, 0.4);
+  color: #ffffff;
+}
+
+.resume-nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.resume-nav-link:hover::after {
+  width: 100%;
 }
 
 .theme-toggle {
@@ -312,6 +523,18 @@
 .theme-toggle:hover {
   background-color: #58a6ff;
   color: #0d1117;
+}
+
+/* Light mode theme toggle */
+[data-theme="light"] .theme-toggle {
+  background-color: #ffffff;
+  border: 2px solid #7dd800;
+  color: #7dd800;
+}
+
+[data-theme="light"] .theme-toggle:hover {
+  background-color: #7dd800;
+  color: #ffffff;
 }
 
 @media screen and (max-width: 600px) {
@@ -354,6 +577,10 @@
     gap: 1rem;
   }
 
+  .navbar-inner {
+    padding: 1rem;
+  }
+
   .resume-nav-link {
     margin-top: 0.5rem;
   }
@@ -374,12 +601,47 @@
     top: 100%;
     left: 0;
     width: 100%;
-    background: var(--nav-bg, #0d1117);
+    gap: 0.5rem;
     padding: 1rem 0;
+    background: rgba(13, 17, 23, 0.2);
+    backdrop-filter: blur(35px);
+    -webkit-backdrop-filter: blur(35px);
+    border-bottom: 1px solid rgba(88, 166, 255, 0.15);
+    box-shadow: 
+      0 8px 32px rgba(0, 0, 0, 0.4),
+      inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    transform: translateY(-10px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+
+  [data-theme="light"] .nav-links {
+    background: var(--navbar-bg);
+    border-bottom: 1px solid rgba(125, 216, 0, 0.2);
+    box-shadow: 
+      0 8px 32px rgba(125, 216, 0, 0.15),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3);
   }
 
   .nav-links.show {
     display: flex;
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 8px;
+    margin: 0 1rem;
+  }
+
+  .resume-nav-link {
+    margin: 0.5rem 1rem;
+    text-align: center;
   }
 }
 
@@ -393,8 +655,19 @@ body::before {
   z-index: -2;
   pointer-events: none;
   animation: starfield 40s linear infinite;
+  filter: brightness(1.2);
 }
 
+[data-theme="light"] body::before {
+  background: linear-gradient(to bottom, #90D5FF, #fffbe6);
+  opacity: 0.4;
+  filter: brightness(1.05) contrast(1.05);
+}
+
+body {
+  background: linear-gradient(to bottom, #f5fcff 0%, #ffffff 80%);
+  transition: background 0.6s ease;
+}
 /* -----------------------------
    Particles Layer Fix (Global)
 ----------------------------- */
@@ -406,7 +679,186 @@ body::before {
   height: 100% !important;
   z-index: -1 !important;
   pointer-events: none;
+  filter: brightness(1.4) contrast(1.1);
+}
+
+/* Light mode particles adjustment */
+[data-theme="light"] #tsparticles canvas {
+  filter: brightness(0.6) contrast(1.2) hue-rotate(120deg);
 }
 
 /* -----------------------------
+   CELESTIAL OBJECTS - IMPROVED
 ----------------------------- */
+
+/* Moon positioning and animations */
+.moon {
+  position: fixed;
+  top: 120px;
+  right: 60px;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle at 30% 30%, #fefcd7, #d0cfcf);
+  border-radius: 50%;
+  filter: brightness(1.3) contrast(1.2);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
+  opacity: 0.95;
+  z-index: 1;
+  overflow: hidden;
+  pointer-events: none;
+  transform: translateY(0px);
+  transition: all 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  animation: floatMoon 20s ease-in-out infinite, moonPhases 60s linear infinite;
+}
+
+.moon::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #0d1117;
+  border-radius: 50%;
+  transform: translateX(-100%);
+  animation: moonShadow 60s linear infinite;
+}
+
+/* IMPROVED SUN for light mode */
+.sun {
+  position: fixed;
+  top: 120px;
+  right: 60px;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle at 30% 30%, #ffff88, #ffe400);
+  border-radius: 50%;
+  filter: brightness(1.2) contrast(1.1);
+  box-shadow: 0 0 60px rgba(255, 255, 100, 0.5);
+  opacity: 0.95;
+  z-index: 1;
+  pointer-events: none;
+  transform: translateY(400px);
+  transition: all 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  animation: floatSun 15s ease-in-out infinite;
+}
+
+.sun::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: 140px;
+  height: 140px;
+  background: transparent;
+  border-radius: 50%;
+  box-shadow: 
+    0 0 0 2px rgba(255, 200, 100, 0.3),
+    0 0 0 4px rgba(255, 190, 100, 0.2),
+    0 0 0 6px rgba(255, 180, 100, 0.1);
+  animation: sunRays 8s linear infinite;
+}
+
+/* Light mode - moon goes down, sun comes up */
+[data-theme="light"] .moon {
+  transform: translateY(400px);
+  opacity: 0;
+}
+
+[data-theme="light"] .sun {
+  transform: translateY(0px);
+  opacity: 1;
+}
+
+/* Dark mode - sun goes down, moon comes up */
+[data-theme="dark"] .moon {
+  transform: translateY(0px);
+  opacity: 0.95;
+}
+
+[data-theme="dark"] .sun {
+  transform: translateY(400px);
+  opacity: 0;
+}
+
+/* Gentle floating animations that don't interfere with positioning */
+@keyframes floatMoon {
+  0%, 100% { 
+    top: 120px; 
+  }
+  50% { 
+    top: 116px; 
+  }
+}
+
+@keyframes floatSun {
+  0%, 100% { 
+    top: 120px; 
+    filter: brightness(1.2) contrast(1.1);
+  }
+  50% { 
+    top: 115px; 
+    filter: brightness(1.3) contrast(1.2);
+  }
+}
+
+@keyframes sunRays {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes moonShadow {
+  0% { transform: translateX(-100%); } /* Full moon */
+  12.5% { transform: translateX(-50%); } /* Waning gibbous */
+  25% { transform: translateX(0%); } /* Last quarter */
+  37.5% { transform: translateX(50%); } /* Waning crescent */
+  50% { transform: translateX(100%); } /* New moon */
+  62.5% { transform: translateX(50%); } /* Waxing crescent */
+  75% { transform: translateX(0%); } /* First quarter */
+  87.5% { transform: translateX(-50%); } /* Waxing gibbous */
+  100% { transform: translateX(-100%); } /* Full moon */
+}
+
+/* Mobile adjustments */
+@media screen and (max-width: 768px) {
+  .moon, .sun {
+    width: 80px;
+    height: 80px;
+    right: 30px;
+  }
+  
+  .sun {
+    transform: translateY(300px);
+  }
+  
+  [data-theme="light"] .moon,
+  [data-theme="dark"] .sun {
+    transform: translateY(300px);
+  }
+  
+  [data-theme="light"] .sun,
+  [data-theme="dark"] .moon {
+    transform: translateY(0px);
+  }
+  
+  @keyframes floatMoon {
+    0%, 100% { 
+      top: 120px; 
+    }
+    50% { 
+      top: 117px; 
+    }
+  }
+  
+  @keyframes floatSun {
+    0%, 100% { 
+      top: 120px; 
+      filter: brightness(1.2) contrast(1.1);
+    }
+    50% { 
+      top: 116px; 
+      filter: brightness(1.3) contrast(1.2);
+    }
+  }
+}
+

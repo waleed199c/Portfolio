@@ -1,4 +1,9 @@
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
@@ -10,14 +15,18 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 import ParticlesBackground from "./components/ParticlesBackground";
+import CelestialBodies from "./components/CelestialBodies";
+import { useIsDarkMode } from "./hooks/useIsDarkMode";
 
 // Move this into a wrapper inside the Router
 function AppContent() {
   const location = useLocation();
+  const isDark = useIsDarkMode();
 
   return (
     <>
       <ParticlesBackground key={location.pathname} />
+      <CelestialBodies />
       <ThemeToggle />
       <Navbar />
       <Routes>
