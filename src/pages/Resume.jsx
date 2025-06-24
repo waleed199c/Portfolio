@@ -4,8 +4,10 @@ import { useNavigate } from "react-router-dom";
 import { AiOutlineDownload } from "react-icons/ai";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 
-pdfjs.GlobalWorkerOptions.workerSrc =
-  window.location.origin + "/pdf.worker.min.mjs";
+const basePath = import.meta.env.BASE_URL || '/';
+pdfjs.GlobalWorkerOptions.workerSrc = 
+  window.location.origin + basePath + "pdf.worker.min.mjs";
+  
 const Resume = () => {
   const [width, setWidth] = useState(window.innerWidth);
   const navigate = useNavigate();
