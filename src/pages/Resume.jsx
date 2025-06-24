@@ -1,35 +1,42 @@
 import { useState, useEffect } from "react";
-import { Document, Page, pdfjs } from 'react-pdf';
+import { Document, Page, pdfjs } from "react-pdf";
 import { useNavigate } from "react-router-dom";
 import { AiOutlineDownload } from "react-icons/ai";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
-
-const currentPath = window.location.pathname;
-const basePath = currentPath.includes('/Portfolio/') ? '/Portfolio/' : '/';
-pdfjs.GlobalWorkerOptions.workerSrc =
-  window.location.origin + basePath + "pdf.worker.min.mjs";
 
 const Resume = () => {
   const [width, setWidth] = useState(window.innerWidth);
   const navigate = useNavigate();
 
-  const pdfFile = "/Portfolio/Alwaleed-Alshaghnoubi-Resume.pdf";
+  const currentPath = window.location.pathname;
+  const basePath = currentPath.includes("/Portfolio/") ? "/Portfolio/" : "/";
+
+  const pdfFile = basePath + "Alwaleed-Alshaghnoubi-Resume.pdf";
 
   useEffect(() => {
+    pdfjs.GlobalWorkerOptions.workerSrc =
+      window.location.origin + basePath + "pdf.worker.min.mjs";
+
     const handleResize = () => setWidth(window.innerWidth);
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return (
-    <div style={{
-      minHeight: "100vh",
-      background: "var(--bg)",
-      padding: "3rem 1rem",
-      color: "var(--text)",
-      textAlign: "center"
-    }}>
-      <h1 style={{ fontSize: "2rem", marginBottom: "1.5rem", paddingTop:"2rem"}}>My Resume</h1>
+    <div
+      style={{
+        minHeight: "100vh",
+        background: "var(--bg)",
+        padding: "3rem 1rem",
+        color: "var(--text)",
+        textAlign: "center",
+      }}
+    >
+      <h1
+        style={{ fontSize: "2rem", marginBottom: "1.5rem", paddingTop: "2rem" }}
+      >
+        My Resume
+      </h1>
 
       <div style={{ marginBottom: "2rem" }}>
         <a
@@ -45,7 +52,7 @@ const Resume = () => {
             fontWeight: "bold",
             textDecoration: "none",
             gap: "0.5rem",
-            boxShadow: "0 4px 10px rgba(0,0,0,0.1)"
+            boxShadow: "0 4px 10px rgba(0,0,0,0.1)",
           }}
         >
           <AiOutlineDownload size={20} />
@@ -53,12 +60,14 @@ const Resume = () => {
         </a>
       </div>
 
-      <div style={{
-        display: "flex",
-        justifyContent: "center",
-        overflow: "auto",
-        marginBottom: "2rem"
-      }}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          overflow: "auto",
+          marginBottom: "2rem",
+        }}
+      >
         <Document file={pdfFile}>
           <Page
             pageNumber={1}
@@ -78,7 +87,7 @@ const Resume = () => {
           padding: "0.6rem 1.2rem",
           borderRadius: "8px",
           fontWeight: "500",
-          cursor: "pointer"
+          cursor: "pointer",
         }}
       >
         ← Back
