@@ -4,8 +4,9 @@ import { useNavigate } from "react-router-dom";
 import { AiOutlineDownload } from "react-icons/ai";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 
-const basePath = import.meta.env.BASE_URL || '/';
-pdfjs.GlobalWorkerOptions.workerSrc = 
+const currentPath = window.location.pathname;
+const basePath = currentPath.includes('/Portfolio/') ? '/Portfolio/' : '/';
+pdfjs.GlobalWorkerOptions.workerSrc =
   window.location.origin + basePath + "pdf.worker.min.mjs";
   
 const Resume = () => {
