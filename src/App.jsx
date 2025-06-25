@@ -19,8 +19,8 @@ import ParticlesBackground from "./components/ParticlesBackground";
 import CelestialBodies from "./components/CelestialBodies";
 import { useIsDarkMode } from "./hooks/useIsDarkMode";
 import DriftingLeaves from "./components/DriftingLeaves";
+import Footer from "./components/Footer"
 
-// Move this into a wrapper inside the Router
 function AppContent() {
   const location = useLocation();
   const isDark = useIsDarkMode();
@@ -40,6 +40,7 @@ function AppContent() {
         <Route path="/Contact" element={<Contact />} />
         <Route path="/Resume" element={<Resume />} />
       </Routes>
+      <Footer />
     </>
   );
 }
