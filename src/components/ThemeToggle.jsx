@@ -30,14 +30,14 @@ function ThemeToggle() {
         scale: 1,
         boxShadow:
           theme === "light"
-            ? "0 0 12px 4px rgba(125, 216, 0, 0.5)"
+            ? "0 0 10px 4px rgba(240, 200, 100, 0.3)"
             : "0 0 12px 4px rgba(88, 166, 255, 0.3)",
       }}
       whileHover={{
         scale: 1.1,
         boxShadow:
           theme === "light"
-            ? "0 0 18px 6px rgba(125, 216, 0, 0.7)"
+            ? "0 0 18px 6px rgba(240, 200, 100, 0.5)"
             : "0 0 18px 6px rgba(88, 166, 255, 0.6)",
       }}
       transition={{ type: "spring", stiffness: 300 }}

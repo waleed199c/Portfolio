@@ -41,10 +41,10 @@ function Hero() {
               serious, sometimes just for fun.
             </p>
             <div className="hero-buttons">
-              <a href="/projects" className="projects-button">
+              <a href={isProd + "/projects"} className="projects-button">
                 View Projects
               </a>
-              <a href="/resume" className="secondary-button" target="_blank">
+              <a href={isProd + "/resume"} className="secondary-button" target="_blank">
                 Resume
               </a>
             </div>

@@ -43,7 +43,7 @@ function AppContent() {
         <Route path="/Contact" element={<Contact />} />
         <Route path="/Resume" element={<Resume />} />
         <Route path="*" element={<NotFound />} />
-        <Route path="/secret" element={<Secret />} />
+        <Route path="/Secret" element={<Secret />} />
       </Routes>
       <Footer />
     </>

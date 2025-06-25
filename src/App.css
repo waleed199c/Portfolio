@@ -323,10 +323,20 @@
   font-size: 3rem;
 }
 
-.tech-icon:hover {
-  transform: scale(1.2);
-  filter: drop-shadow(0 0 6px var(--accent));
+.tech-icons .tech-icon {
+  transition: transform 0.3s ease;
 }
+
+[data-theme="dark"] .tech-icons .tech-icon:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 6px rgba(88, 166, 255, 0.6));
+}
+
+[data-theme="light"] .tech-icons .tech-icon:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 6px rgba(120, 120, 120, 0.2)); /* soft gray instead of green */
+}
+
 
 /* Typing effect */
 .typing-line {
