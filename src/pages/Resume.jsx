@@ -2,15 +2,16 @@ import { useState, useEffect } from "react";
 import { Document, Page, pdfjs } from "react-pdf";
 import { useNavigate } from "react-router-dom";
 import { AiOutlineDownload } from "react-icons/ai";
+import { motion } from "framer-motion";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
+import "../App.css";
 
-const Resume = () => {
+export default function Resume() {
   const [width, setWidth] = useState(window.innerWidth);
   const navigate = useNavigate();
 
   const currentPath = window.location.pathname;
   const basePath = currentPath.includes("/Portfolio/") ? "/Portfolio/" : "/";
-
   const pdfFile = basePath + "Alwaleed-Alshaghnoubi-Resume.pdf";
 
   useEffect(() => {
@@ -20,80 +21,57 @@ const Resume = () => {
     const handleResize = () => setWidth(window.innerWidth);
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  }, [basePath]);
 
   return (
-    <div
-      style={{
-        minHeight: "100vh",
-        background: "var(--bg)",
-        padding: "3rem 1rem",
-        color: "var(--text)",
-        textAlign: "center",
-      }}
-    >
-      <h1
-        style={{ fontSize: "2rem", marginBottom: "1.5rem", paddingTop: "2rem" }}
+    <div className="page resume-page">
+      <motion.h1
+        className="section-title"
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
       >
         My Resume
-      </h1>
+      </motion.h1>
 
-      <div style={{ marginBottom: "2rem" }}>
-        <a
-          href={pdfFile}
-          download
-          style={{
-            display: "inline-flex",
-            alignItems: "center",
-            background: "var(--accent)",
-            color: "white",
-            padding: "0.75rem 1.5rem",
-            borderRadius: "8px",
-            fontWeight: "bold",
-            textDecoration: "none",
-            gap: "0.5rem",
-            boxShadow: "0 4px 10px rgba(0,0,0,0.1)",
-          }}
-        >
-          <AiOutlineDownload size={20} />
-          Download PDF
-        </a>
-      </div>
-
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          overflow: "auto",
-          marginBottom: "2rem",
-        }}
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4, delay: 0.2 }}
+        className="resume-download"
       >
-        <Document file={pdfFile}>
-          <Page
-            pageNumber={1}
-            scale={width > 786 ? 1.5 : 0.6}
-            renderTextLayer={false}
-            renderAnnotationLayer={false}
-          />
-        </Document>
-      </div>
+        <a href={pdfFile} download className="resume-download-button">
+          <AiOutlineDownload size={20} /> Download PDF
+        </a>
+      </motion.div>
 
-      <button
+      <motion.div
+        className="pdf-container"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.4, delay: 0.3 }}
+      >
+        <div className="pdf-box">
+          <Document file={pdfFile}>
+            <Page
+              pageNumber={1}
+              scale={width > 1024 ? 1.5 : width > 768 ? 1 : 0.6}
+              renderTextLayer={false}
+              renderAnnotationLayer={false}
+            />
+          </Document>
+        </div>
+      </motion.div>
+
+      <motion.button
         onClick={() => navigate(-1)}
-        style={{
-          backgroundColor: "transparent",
-          border: "2px solid var(--accent)",
-          color: "var(--accent)",
-          padding: "0.6rem 1.2rem",
-          borderRadius: "8px",
-          fontWeight: "500",
-          cursor: "pointer",
-        }}
+        className="back-home"
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4, delay: 0.4 }}
       >
         ← Back
-      </button>
+      </motion.button>
     </div>
   );
-};
-
-export default Resume;
+}

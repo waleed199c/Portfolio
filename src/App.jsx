@@ -22,6 +22,8 @@ import DriftingLeaves from "./components/DriftingLeaves";
 import Footer from "./components/Footer"
 import NotFound from "./pages/NotFound";
 import Secret from "./pages/Secret";
+import { motion } from "framer-motion";
+
 function AppContent() {
   const location = useLocation();
   const isDark = useIsDarkMode();
