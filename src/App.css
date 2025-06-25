@@ -556,6 +556,15 @@
   cursor: pointer;
 }
 
+.hamburger-line {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background-color: currentColor;
+  margin: 3px 0;
+  transition: all 0.3s ease;
+}
+
 .menu-toggle {
   display: none;
   font-size: 1.5rem;
@@ -580,6 +589,18 @@
 
 [data-theme="light"] .menu-toggle:hover {
   background: rgba(125, 216, 0, 0.1);
+}
+
+.menu-toggle[aria-expanded="true"] .hamburger-line:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle[aria-expanded="true"] .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle[aria-expanded="true"] .hamburger-line:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
 }
 
 .nav-links {

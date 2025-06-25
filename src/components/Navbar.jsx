@@ -1,10 +1,21 @@
 import { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 
+const navigationItems = [
+  { path: "/", label: "Home" },
+  { path: "/about", label: "About" },
+  { path: "/projects", label: "Projects" },
+  { path: "/contact", label: "Contact" },
+  { path: "/resume", label: "Resume" },
+];
+
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
+  const closeMenu = () => setMenuOpen(false);
+
+  const getNavLinkClass = ({ isActive }) => (isActive ? "active" : "");
 
   return (
     <nav className="navbar">
@@ -18,46 +29,28 @@ function Navbar() {
           W.A
         </Link>
 
-        <button className="menu-toggle" onClick={toggleMenu}>
-          ☰
+        <button 
+          className="menu-toggle" 
+          onClick={toggleMenu}
+          aria-label="Toggle navigation menu"
+          aria-expanded={menuOpen}
+        >
+          <span className="hamburger-line"></span>
+          <span className="hamburger-line"></span>
+          <span className="hamburger-line"></span>
         </button>
 
         <div className={`nav-links ${menuOpen ? "show" : ""}`}>
-          <NavLink
-            to="/"
-            className={({ isActive }) => (isActive ? "active" : "")}
-            onClick={() => setMenuOpen(false)}
-          >
-            Home
-          </NavLink>
-          <NavLink
-            to="/about"
-            className={({ isActive }) => (isActive ? "active" : "")}
-            onClick={() => setMenuOpen(false)}
-          >
-            About
-          </NavLink>
-          <NavLink
-            to="/projects"
-            className={({ isActive }) => (isActive ? "active" : "")}
-            onClick={() => setMenuOpen(false)}
-          >
-            Projects
-          </NavLink>
-          <NavLink
-            to="/contact"
-            className={({ isActive }) => (isActive ? "active" : "")}
-            onClick={() => setMenuOpen(false)}
-          >
-            Contact
-          </NavLink>
-          <NavLink
-            to="/resume"
-            className={({ isActive }) => (isActive ? "active" : "")}
-            onClick={() => setMenuOpen(false)}
-          >
-            Resume
-          </NavLink>
+          {navigationItems.map(({ path, label }) => (
+            <NavLink
+              key={path}
+              to={path}
+              className={getNavLinkClass}
+              onClick={closeMenu}
+            >
+              {label}
+            </NavLink>
+          ))}
         </div>
       </div>
     </nav>
