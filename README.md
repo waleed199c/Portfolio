@@ -1,52 +1,60 @@
-# 🌐 Alwaleed Khaled – Developer Portfolio
+# Alwaleed Khaled — Developer Portfolio
 
-Welcome to my personal developer portfolio!  
-This site showcases who I am, what I’ve built, and how to get in touch with me.
+Welcome to my personal portfolio — a space where code meets creativity.  
+Here, I showcase who I am, what I build, and what drives me forward.
 
-🔗 Live Site → [https://waleed199c.github.io/portfolio](https://waleed199c.github.io/Portfolio)
+Live site: [waleed199c.github.io/Portfolio](https://waleed199c.github.io/Portfolio)
 
 ---
 
 ## About Me
 
-I'm a Software Engineering graduate with hands-on experience in modern web technologies like React, Node.js, and MongoDB. I'm passionate about clean code, solving real problems, and learning fast — especially in environments that challenge me.
+I'm Alwaleed, a Software Engineering graduate with a deep interest in full stack development, UI animations, and building things that feel thoughtful. I'm fluent in both English and Arabic, and I thrive when solving real-world problems or exploring unusual ideas that make people pause and smile.
 
--  Bilingual: Fluent in English & Arabic  
--  Currently learning: Framer Motion & TypeScript  
--  Available for: Remote internships, frontend roles, and junior dev opportunities
+- Bilingual: English + Arabic  
+- Currently learning: Framer Motion, TypeScript  
+- Open to: Remote internships, junior frontend roles, and meaningful side projects  
 
 ---
 
 ## Tech Stack
 
+Modern tools I’ve used to build this and other projects:
+
 - React, JavaScript, JSX  
-- HTML5, CSS3, Tailwind CSS  
+- Tailwind CSS, HTML5, CSS3  
 - Node.js, Express.js  
 - MongoDB, LocalStorage  
-- Git & GitHub  
-- AOS (Animate On Scroll), Vite
+- Git, GitHub, Vite  
+- AOS (Animate On Scroll), Framer Motion  
 
 ---
 
 ## Projects
 
-View all projects on the live site → [Projects Section](https://waleed199c.github.io/portfolio/#/projects)
+Check out all live projects in the portfolio:  
+[Projects Section](https://waleed199c.github.io/Portfolio/projects)
 
-### ✅ [To-Do List App](https://github.com/waleed199c/todo-list-react)
-A responsive and clean task planner with local storage, theme toggle, and tag filtering.
+Highlighted builds:
 
-### 🚀 [NASA Picture of the Day](https://github.com/waleed199c/NASA-API-React)
-Pulls data from NASA’s APOD API and displays image metadata by date. Uses React, Axios, and modern hooks.
+### To-Do List App
+[GitHub Repo](https://github.com/waleed199c/todo-list-react)  
+A planner-style to-do app with theme toggle, tag filters, and clean UX. Built with React and localStorage.
+
+### NASA APOD Viewer
+[GitHub Repo](https://github.com/waleed199c/nasa-react-app)  
+Pulls daily content from NASA’s APOD API. Features dynamic date selection and responsive design.
 
 ---
 
 ## Resume
 
-[View / Download Resume (PDF)](https://waleed199c.github.io/portfolio/Alwaleed-Khaled-Resume.pdf)
+View or download my resume here:  
+[View PDF Resume](https://waleed199c.github.io/Portfolio/Alwaleed-Alshaghnoubi-Resume.pdf)
 
 ---
 
-## How to Run Locally
+## Running Locally
 
 Clone the repo and run:
 
@@ -55,24 +63,28 @@ npm install
 npm run dev
 ```
 
-To build for production (used by GitHub Pages):
+To build for production and deploy to GitHub Pages:
 
 ```bash
 npm run build
 npm run deploy
 ```
 
+Note: App is deployed under the /Portfolio path — make sure your routes and basepath reflect that.
+
 ---
 
 ## Contact
-- Email: [alwaleedshg@gmail.com](mailto:alwaleedshg@gmail.com)
 
-- GitHub: [@waleed199c](https://github.com/waleed199c)
+Feel free to reach out:
 
+- Email: [alwaleedshg@gmail.com](mailto:alwaleedshg@gmail.com)  
+- GitHub: [@waleed199c](https://github.com/waleed199c)  
 - LinkedIn: [Alwaleed Alshaghnoubi](https://www.linkedin.com/in/alwaleed-alshaghnoubi/)
 
 ---
 
 ## License
-This project is under the MIT License.
-If this template helps you, feel free to fork or adapt it with credit.
+
+This project is MIT-licensed.  
+Feel free to fork, adapt, or remix it — a little credit is appreciated.
