@@ -544,25 +544,16 @@
 }
 
 .logo {
-  font-size: 1.5rem;
   font-weight: bold;
-  color: var(--text);
-  transition: all 0.3s ease;
+  font-size: 1.5rem;
+  color: var(--accent);
+  text-decoration: none;
 }
+
 
 .logo:hover {
-  color: var(--accent);
-  text-shadow: 0 0 10px rgba(88, 166, 255, 0.3);
-}
-
-/* Light mode logo hover */
-[data-theme="light"] .logo {
-  color: var(--navbar-text);
-}
-
-[data-theme="light"] .logo:hover {
-  color: var(--accent);
-  text-shadow: 0 0 10px rgba(125, 216, 0, 0.4);
+  text-shadow: 0 0 6px var(--accent);
+  cursor: pointer;
 }
 
 .menu-toggle {

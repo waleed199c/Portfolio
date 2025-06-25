@@ -44,7 +44,7 @@ function Hero() {
               <a href={isProd + "/projects"} className="projects-button">
                 View Projects
               </a>
-              <a href={isProd + "/resume"} className="secondary-button" target="_blank">
+              <a href={isProd + "/resume"} className="secondary-button">
                 Resume
               </a>
             </div>

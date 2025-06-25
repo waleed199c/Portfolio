@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -9,7 +9,14 @@ function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-inner">
-        <div className="logo">W.A</div>
+        <Link
+          to="/secret"
+          className="logo"
+          title="Curious minds welcome."
+          aria-label="Logo — secret link"
+        >
+          W.A
+        </Link>
 
         <button className="menu-toggle" onClick={toggleMenu}>
           ☰

@@ -38,12 +38,12 @@ function AppContent() {
        <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/About" element={<About />} />
-        <Route path="/Projects" element={<Projects />} />
-        <Route path="/Contact" element={<Contact />} />
-        <Route path="/Resume" element={<Resume />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/resume" element={<Resume />} />
         <Route path="*" element={<NotFound />} />
-        <Route path="/Secret" element={<Secret />} />
+        <Route path="/secret" element={<Secret />} />
       </Routes>
       <Footer />
     </>
