@@ -1,5 +1,7 @@
 import { Typewriter } from "react-simple-typewriter";
 
+const isProd = process.env.NODE_ENV === 'production' ? '/Portfolio' : '';
+
 function Hero() {
   return (
     <section className="hero-section">
@@ -7,7 +9,7 @@ function Hero() {
         <div className="hero-flex">
           <div className="avatar-wrapper">
             <img
-              src="/images/Avatar.png"
+              src={isProd + "/images/Avatar.png"}
               alt="Alwaleed avatar"
               className="hero-avatar"
             />
