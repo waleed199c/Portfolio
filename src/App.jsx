@@ -20,7 +20,8 @@ import CelestialBodies from "./components/CelestialBodies";
 import { useIsDarkMode } from "./hooks/useIsDarkMode";
 import DriftingLeaves from "./components/DriftingLeaves";
 import Footer from "./components/Footer"
-
+import NotFound from "./pages/NotFound";
+import Secret from "./pages/Secret";
 function AppContent() {
   const location = useLocation();
   const isDark = useIsDarkMode();
@@ -39,6 +40,8 @@ function AppContent() {
         <Route path="/Projects" element={<Projects />} />
         <Route path="/Contact" element={<Contact />} />
         <Route path="/Resume" element={<Resume />} />
+        <Route path="*" element={<NotFound />} />
+        <Route path="/secret" element={<Secret />} />
       </Routes>
       <Footer />
     </>
