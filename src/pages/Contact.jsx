@@ -42,11 +42,11 @@ export default function Contact() {
     <div className="page contact-grid" data-aos="fade-up">
       {/* Left Side – Invite Message */}
       <div className="contact-left" data-aos="fade-right">
-        <h1 className="section-title">Let’s Talk.</h1>
+        <h1 className="section-title">Let's Talk.</h1>
         <p className="section-text">
           Whether you have a project in mind, a question, or just want to say hi
-          — I’m always open to meaningful conversations. Drop me a message and
-          I’ll get back to you soon.
+          — I'm always open to meaningful conversations. Drop me a message and
+          I'll get back to you soon.
         </p>
       </div>
 
@@ -60,6 +60,7 @@ export default function Contact() {
               placeholder="Your Name (optional)"
               value={formData.name}
               onChange={handleChange}
+              autoComplete="name"
             />
             <input
               type="email"
@@ -68,6 +69,7 @@ export default function Contact() {
               value={formData.email}
               onChange={handleChange}
               required
+              autoComplete="email"
             />
             <textarea
               name="message"
@@ -76,10 +78,11 @@ export default function Contact() {
               value={formData.message}
               onChange={handleChange}
               required
+              autoComplete="off"
             />
             {formStatus === "success" ? (
               <p className="section-text success-message">
-                Thanks! I’ll be in touch soon. 📨
+                Thanks! I'll be in touch soon. 📨
               </p>
             ) : (
               <button type="submit" disabled={formStatus === "sending"}>
@@ -89,7 +92,7 @@ export default function Contact() {
             <input type="text" name="_gotcha" style={{ display: "none" }} />
           </form>
         ) : (
-          <p className="section-text">Thanks! I’ll get back to you soon. 📨</p>
+          <p className="section-text">Thanks! I'll get back to you soon. 📨</p>
         )}
       </div>
     </div>
